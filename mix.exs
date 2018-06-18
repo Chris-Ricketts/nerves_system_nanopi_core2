@@ -1,7 +1,7 @@
 defmodule NervesSystemRpi3.MixProject do
   use Mix.Project
 
-  @app :nerves_system_rpi3
+  @app :nerves_system_nanopi_core2
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -26,7 +26,7 @@ defmodule NervesSystemRpi3.MixProject do
   end
 
   defp bootstrap(args) do
-    System.put_env("MIX_TARGET", "rpi3")
+    System.put_env("MIX_TARGET", "nanopi_core2")
     Application.start(:nerves_bootstrap)
     Mix.Task.run("loadconfig", args)
   end
@@ -34,9 +34,9 @@ defmodule NervesSystemRpi3.MixProject do
   defp nerves_package do
     [
       type: :system,
-      artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
-      ],
+      #artifact_sites: [
+      #  {:github_releases, "nerves-project/#{@app}"}
+      #],
       platform: Nerves.System.BR,
       platform_config: [
         defconfig: "nerves_defconfig"
@@ -49,7 +49,7 @@ defmodule NervesSystemRpi3.MixProject do
     [
       {:nerves, "~> 1.0", runtime: false},
       {:nerves_system_br, "1.2.0", runtime: false},
-      {:nerves_toolchain_arm_unknown_linux_gnueabihf, "1.0.0", runtime: false},
+      {:nerves_toolchain_aarch64_unknown_linux_gnueabi, "1.0.0", runtime: false},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
       {:ex_doc, "~> 0.18", only: :dev}
     ]
@@ -82,9 +82,7 @@ defmodule NervesSystemRpi3.MixProject do
       "fwup-revert.conf",
       "post-createfs.sh",
       "post-build.sh",
-      "cmdline.txt",
-      "linux-4.9.defconfig",
-      "config.txt"
+      "boot.scr",
     ]
   end
 

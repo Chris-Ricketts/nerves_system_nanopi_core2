@@ -1,0 +1,11 @@
+echo "Running Nerves U-Boot script"
+
+setenv bootargs console=ttyS0,115200 earlyprintk root=/dev/mmcblk1p2 monitor_onoff=false rootfstype=squashfs ro rootwait
+
+fatload mmc 0 $kernel_addr_r Image
+
+fatload mmc 0 $fdt_addr_r sun50i-h5-nanopi-neo-core2.dtb
+
+booti $kernel_addr_r - $fdt_addr_r
+
+echo "Nerves boot failed!"
