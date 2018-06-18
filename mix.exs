@@ -1,4 +1,4 @@
-defmodule NervesSystemRpi3.MixProject do
+defmodule NervesSystemNanoPiCore2.MixProject do
   use Mix.Project
 
   @app :nerves_system_nanopi_core2
@@ -57,16 +57,16 @@ defmodule NervesSystemRpi3.MixProject do
 
   defp description do
     """
-    Nerves System - Raspberry Pi 3 B / B+
+    Nerves System - NanoPi Neo Core2
     """
   end
 
   defp package do
     [
-      maintainers: ["Frank Hunleth", "Justin Schneck"],
+      maintainers: ["Chris Ricketts"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"Github" => "https://github.com/chris-ricketts/#{@app}"}
     ]
   end
 
