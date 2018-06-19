@@ -6,3 +6,4 @@ set -e
 # active firmware.
 mkdir -p $TARGET_DIR/usr/share/fwup
 $HOST_DIR/usr/bin/fwup -c -f $NERVES_DEFCONFIG_DIR/fwup-revert.conf -o $TARGET_DIR/usr/share/fwup/revert.fw
+

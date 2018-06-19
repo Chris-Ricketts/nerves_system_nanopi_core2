@@ -82,7 +82,7 @@ defmodule NervesSystemNanoPiCore2.MixProject do
       "fwup-revert.conf",
       "post-createfs.sh",
       "post-build.sh",
-      "boot.scr",
+      "boot.cmd",
     ]
   end
 
