@@ -76,6 +76,7 @@ defmodule NervesSystemNanoPiCore2.MixProject do
       "mix.exs",
       "nerves_defconfig",
       "linux-4.14.defconfig",
+      "uboot_defconfig",
       "README.md",
       "VERSION",
       "rootfs_overlay",
