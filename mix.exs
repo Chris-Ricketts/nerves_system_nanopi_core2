@@ -77,7 +77,6 @@ defmodule NervesSystemNanoPiCore2.MixProject do
       "nerves_defconfig",
       "linux-4.14.defconfig",
       "uboot_defconfig",
-      "README.md",
       "VERSION",
       "rootfs_overlay",
       "fwup.conf",
@@ -86,10 +85,5 @@ defmodule NervesSystemNanoPiCore2.MixProject do
       "post-build.sh",
       "boot.cmd",
     ]
-  end
-
-  # Copy the images referenced by docs, since ex_doc doesn't do this.
-  defp copy_images(_) do
-    File.cp_r("assets", "doc/assets")
   end
 end
