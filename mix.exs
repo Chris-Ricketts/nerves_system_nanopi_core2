@@ -16,7 +16,7 @@ defmodule NervesSystemNanoPiCore2.MixProject do
       description: description(),
       package: package(),
       deps: deps(),
-      aliases: [loadconfig: [&bootstrap/1], docs: ["docs", &copy_images/1]],
+      aliases: [loadconfig: [&bootstrap/1]],
       docs: [extras: ["README.md"], main: "readme"]
     ]
   end
